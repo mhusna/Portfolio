@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Repository
+namespace DataAccessLayer.Concrete.Repository
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
