@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.Repository.EfRepository
 {
-    public class EfFeatureRepository : GenericRepository<Experience>, IExperienceDal
+    public class EfFeatureRepository : GenericRepository<Feature>, IFeatureDal
     {
     }
 }
