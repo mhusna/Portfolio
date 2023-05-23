@@ -2,9 +2,9 @@
 using DataAccessLayer.Concrete.Repository.EfRepository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Portfolio_Source.ViewComponents
+namespace Portfolio_Source.ViewComponents.Portfolio
 {
-    public class PortfolioList:ViewComponent
+    public class PortfolioList : ViewComponent
     {
         PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioRepository());
         public IViewComponentResult Invoke()
