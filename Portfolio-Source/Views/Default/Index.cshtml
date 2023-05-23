@@ -52,7 +52,8 @@
                         <h2 class="marker marker-center">İletişim</h2>
                     </div>
                     <div class="row">
-                        @await Component.InvokeAsync("SendMessage")
+                        @await Html.PartialAsync("SendMessage")
+                        @*@await Component.InvokeAsync("SendMessage")*@
                         @await Component.InvokeAsync("ContactDetails")
                     </div>
                 </div>
