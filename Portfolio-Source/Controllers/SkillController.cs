@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.Repository.EfRepository;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio_Source.Controllers
@@ -10,6 +11,19 @@ namespace Portfolio_Source.Controllers
         public IActionResult Index()
         {
             return View(skillManager.TGetList());
+        }
+
+        [HttpGet]
+        public IActionResult AddSkill()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddSkill(Skill skill)
+        {
+            skillManager.TAdd(skill);
+            return RedirectToAction("Index");
         }
     }
 }
