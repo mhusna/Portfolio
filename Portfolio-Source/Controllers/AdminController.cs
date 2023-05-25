@@ -14,6 +14,11 @@ namespace Portfolio_Source.Controllers
             return PartialView();
         }
 
+        public PartialViewResult PartialNavigation()
+        {
+            return PartialView();
+        }
+
         public PartialViewResult PartialNavbar()
         {
             return PartialView();

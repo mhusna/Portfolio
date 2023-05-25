@@ -10,12 +10,19 @@ namespace Portfolio_Source.Controllers
         SkillManager skillManager = new SkillManager(new EfSkillRepository());
         public IActionResult Index()
         {
+            ViewBag.Message = "List of Skills";
+            ViewBag.Controller = "Skill";
+            ViewBag.Action = "Index";
+
             return View(skillManager.TGetList());
         }
 
         [HttpGet]
         public IActionResult AddSkill()
         {
+            ViewBag.Message = "Add New Skill";
+            ViewBag.Controller = "Skill";
+            ViewBag.Action = "AddSkill";
             return View();
         }
 
