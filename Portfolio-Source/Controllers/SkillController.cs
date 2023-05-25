@@ -39,5 +39,21 @@ namespace Portfolio_Source.Controllers
             skillManager.TDelete(skillManager.TGetById(id));
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult EditSkill(int id)
+        {
+            ViewBag.Message = "Edit Skill";
+            ViewBag.Controller = "Skill";
+            ViewBag.Action = "EditSkill";
+            return View(skillManager.TGetById(id));
+        }
+
+        [HttpPost]
+        public IActionResult EditSkill(Skill skill)
+        {
+            skillManager.TUpdate(skill);
+            return RedirectToAction("Index");
+        }
     }
 }
