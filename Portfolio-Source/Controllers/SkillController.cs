@@ -32,5 +32,12 @@ namespace Portfolio_Source.Controllers
             skillManager.TAdd(skill);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult DeleteSkill(int id)
+        {
+            skillManager.TDelete(skillManager.TGetById(id));
+            return RedirectToAction("Index");
+        }
     }
 }
