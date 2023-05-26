@@ -1,7 +1,7 @@
 ﻿@using EntityLayer.Concrete
 @model Experience
 @{
-    ViewData["Title"] = "AddExperience";
+    ViewData["Title"] = "EditExperience";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -14,34 +14,34 @@
                     <h3 class="mb-0">Experience Informations</h3>
                 </div>
 
-                <form asp-controller="Experience" asp-action="AddExperience" method="post">
+                <form asp-controller="Experience" asp-action="EditExperience" method="post">
 
                     <div class="mb-3 col-9 center">
                         <label class="form-label" asp-for="Name">Name</label>
-                        <input class="form-control" asp-for="Name">
+                        <input class="form-control" asp-for="Name" value="@Model.Name">
                         <span class="text-danger" asp-validation-for="Name"></span>
                     </div>
                     <br />
 
                     <div class="mb-3 col-9 center">
                         <label asp-for="Date" class="form-label">Date</label>
-                        <input class="form-control" asp-for="Date">
+                        <input class="form-control" asp-for="Date" value="@Model.Date">
                         <span class="text-danger" asp-validation-for="Date"></span>
                     </div>
 
                     <div class="mb-3 col-9 center">
                         <label asp-for="Date" class="form-label">Description</label>
-                        <input class="form-control" asp-for="Description">
+                        <input class="form-control" asp-for="Description" value="@Model.Description">
                         <span class="text-danger" asp-validation-for="Description"></span>
                     </div>
 
                     <div class="mb-3 col-9 center">
                         <label asp-for="ImageUrl" class="form-label">Image</label>
-                        <input class="form-control" asp-for="ImageUrl">
+                        <input class="form-control" asp-for="ImageUrl" value="@Model.ImageUrl">
                         <span class="text-danger" asp-validation-for="ImageUrl"></span>
                     </div>
 
-                    <div class="col-3 center"><button class="btn btn-primary">Insert</button></div>
+                    <div class="col-3 center"><button class="btn btn-primary">Edit</button></div>
                 </form>
             </div>
         </div>
