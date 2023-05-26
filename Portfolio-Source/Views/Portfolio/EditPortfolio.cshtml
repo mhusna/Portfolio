@@ -18,26 +18,26 @@
 
                     <div class="mb-3 col-9 center">
                         <label class="form-label" asp-for="Name">Name</label>
-                        <input class="form-control" asp-for="Name" value="Name">
+                        <input class="form-control" asp-for="Name" value="@Model.Name">
                         <span class="text-danger" asp-validation-for="Name"></span>
                     </div>
                     <br />
 
                     <div class="mb-3 col-9 center">
                         <label asp-for="ProjectUrl" class="form-label">Project Url</label>
-                        <input class="form-control" asp-for="ProjectUrl" value="ProjectUrl">
+                        <input class="form-control" asp-for="ProjectUrl" value="@Model.ProjectUrl">
                         <span class="text-danger" asp-validation-for="ProjectUrl"></span>
                     </div>
 
                     <div class="mb-3 col-9 center">
                         <label asp-for="ImageFullUrl" class="form-label">Full Image Url</label>
-                        <input class="form-control" asp-for="ImageFullUrl" value="ImageFullUrl">
+                        <input class="form-control" asp-for="ImageFullUrl" value="@Model.ImageFullUrl">
                         <span class="text-danger" asp-validation-for="ImageFullUrl"></span>
                     </div>
 
                     <div class="mb-3 col-9 center">
                         <label asp-for="ImageShortUrl" class="form-label">Short Image Url</label>
-                        <input class="form-control" asp-for="ImageShortUrl" value="ImageShortUrl">
+                        <input class="form-control" asp-for="ImageShortUrl" value="@Model.ImageShortUrl">
                         <span class="text-danger" asp-validation-for="ImageShortUrl"></span>
                     </div>
 
