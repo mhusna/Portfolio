@@ -14,5 +14,15 @@ namespace Portfolio_Source.Controllers
             ViewBag.Action = "Index";
             return View(experienceManager.TGetList());
         }
+
+        [HttpGet]
+        public IActionResult AddExperience()
+        {
+            ViewBag.Message = "## Insert New Experience ##";
+            ViewBag.Controller = "Experience";
+            ViewBag.Action = "AddExperience";
+
+            return View();
+        }
     }
 }
