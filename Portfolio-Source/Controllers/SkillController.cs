@@ -10,7 +10,7 @@ namespace Portfolio_Source.Controllers
         SkillManager skillManager = new SkillManager(new EfSkillRepository());
         public IActionResult Index()
         {
-            ViewBag.Message = "List of Skills";
+            ViewBag.Message = "## List of Skills ##";
             ViewBag.Controller = "Skill";
             ViewBag.Action = "Index";
 
@@ -20,7 +20,7 @@ namespace Portfolio_Source.Controllers
         [HttpGet]
         public IActionResult AddSkill()
         {
-            ViewBag.Message = "Add New Skill";
+            ViewBag.Message = "## Add New Skill ##";
             ViewBag.Controller = "Skill";
             ViewBag.Action = "AddSkill";
             return View();
@@ -43,7 +43,7 @@ namespace Portfolio_Source.Controllers
         [HttpGet]
         public IActionResult EditSkill(int id)
         {
-            ViewBag.Message = "Edit Skill";
+            ViewBag.Message = "## Edit Skill ##";
             ViewBag.Controller = "Skill";
             ViewBag.Action = "EditSkill";
             return View(skillManager.TGetById(id));
