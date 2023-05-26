@@ -1,0 +1,50 @@
+﻿@using EntityLayer.Concrete
+@model Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Portfolio Informations</h3>
+                </div>
+
+                <form asp-controller="Portfolio" asp-action="AddPortfolio" method="post">
+
+                    <div class="mb-3 col-9 center">
+                        <label class="form-label" asp-for="Name">Name</label>
+                        <input class="form-control" asp-for="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <br />
+
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="ProjectUrl" class="form-label">Project Url</label>
+                        <input class="form-control" asp-for="ProjectUrl">
+                        <span class="text-danger" asp-validation-for="ProjectUrl"></span>
+                    </div>
+
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="ImageFullUrl" class="form-label">Full Image Url</label>
+                        <input class="form-control" asp-for="ImageFullUrl">
+                        <span class="text-danger" asp-validation-for="ImageFullUrl"></span>
+                    </div>
+
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="ImageShortUrl" class="form-label">Short Image Url</label>
+                        <input class="form-control" asp-for="ImageShortUrl">
+                        <span class="text-danger" asp-validation-for="ImageShortUrl"></span>
+                    </div>
+
+                    <div class="col-3 center"><button class="btn btn-primary">Insert</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
