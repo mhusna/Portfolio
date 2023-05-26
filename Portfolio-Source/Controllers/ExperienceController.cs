@@ -32,5 +32,27 @@ namespace Portfolio_Source.Controllers
             experienceManager.TAdd(experience);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteExperience(int id)
+        {
+            experienceManager.TDelete(experienceManager.TGetById(id));
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult EditExperience(int id)
+        {
+            ViewBag.Message = "## Edit Experience ##";
+            ViewBag.Controller = "Experience";
+            ViewBag.Action = "EditExperience";
+            return View(experienceManager.TGetById(id));
+        }
+
+        [HttpPost]
+        public IActionResult EditExperience(Experience experience)
+        {
+            experienceManager.TUpdate(experience);
+            return RedirectToAction("Index");
+        }
     }
 }
