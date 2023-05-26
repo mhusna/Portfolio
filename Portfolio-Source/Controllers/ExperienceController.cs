@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.Repository.EfRepository;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio_Source.Controllers
@@ -23,6 +24,13 @@ namespace Portfolio_Source.Controllers
             ViewBag.Action = "AddExperience";
 
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddExperience(Experience experience)
+        {
+            experienceManager.TAdd(experience);
+            return RedirectToAction("Index");
         }
     }
 }
