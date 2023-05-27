@@ -1,6 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concrete.Repository.EfRepository;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio_Source.Controllers
@@ -30,8 +33,22 @@ namespace Portfolio_Source.Controllers
         [HttpPost]
         public IActionResult AddPortfolio(Portfolio portfolio)
         {
-            portfolioManager.TAdd(portfolio);
-            return RedirectToAction("Index");
+
+            PortfolioValidator portfolioValidator = new PortfolioValidator();
+            ValidationResult validationResult = portfolioValidator.Validate(portfolio);
+
+            if (validationResult.IsValid)
+            {
+                portfolioManager.TAdd(portfolio);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in validationResult.Errors)
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            }
+
+            return RedirectToAction("AddPortfolio");
         }
 
         public IActionResult DeletePortfolio(int id)
@@ -53,8 +70,22 @@ namespace Portfolio_Source.Controllers
         [HttpPost]
         public IActionResult EditPortfolio(Portfolio portfolio)
         {
-            portfolioManager.TUpdate(portfolio);
-            return RedirectToAction("Index");
+
+            PortfolioValidator portfolioValidator = new PortfolioValidator();
+            ValidationResult validationResult = portfolioValidator.Validate(portfolio);
+
+            if (validationResult.IsValid)
+            {
+                portfolioManager.TUpdate(portfolio);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in validationResult.Errors)
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            }
+
+            return RedirectToAction("EditPortfolio");
         }
 
     }
