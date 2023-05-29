@@ -14,8 +14,29 @@ namespace Portfolio_Source.Controllers
         }
 
         [HttpGet]
+        public IActionResult AddFeature()
+        {
+            ViewBag.Message = "## Insert New Feature ##";
+            ViewBag.Controller = "Feature";
+            ViewBag.Action = "AddFeature";
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddFeature(Feature feature)
+        {
+            featureManager.TAdd(feature);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
         public IActionResult EditFeature(int id)
         {
+            ViewBag.Message = "## Edit Feature ##";
+            ViewBag.Controller = "Feature";
+            ViewBag.Action = "EditFeature";
+
             return View(featureManager.TGetById(id));
         }
 
