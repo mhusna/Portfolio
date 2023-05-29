@@ -22,7 +22,6 @@
                             <th scope="col">Header</th>
                             <th scope="col">Name</th>
                             <th scope="col">Title</th>
-                            <th scope="col">Delete</th>
                             <th scope="col">Edit</th>
                         </tr>
                     </thead>
@@ -35,14 +34,12 @@
                                 <th>@item.Header</th>
                                 <th>@item.Name</th>
                                 <th>@item.Title</th>
-                                <th><a href="/Feature/DeleteFeature/@item.Id" class="btn btn-danger">Delete</a></th>
                                 <th><a href="/Feature/EditFeature/@item.Id" class="btn btn-info">Edit</a></th>
 
                             </tr>
                         }
                     </tbody>
                 </table>
-                <div class="col-3 center"><a href="/Feature/AddFeature/" class="btn btn-primary">New Feature</a></div>
 
             </div>
         </div>

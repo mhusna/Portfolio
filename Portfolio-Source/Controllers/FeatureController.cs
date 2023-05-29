@@ -14,23 +14,6 @@ namespace Portfolio_Source.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddFeature()
-        {
-            ViewBag.Message = "## Insert New Feature ##";
-            ViewBag.Controller = "Feature";
-            ViewBag.Action = "AddFeature";
-
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult AddFeature(Feature feature)
-        {
-            featureManager.TAdd(feature);
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet]
         public IActionResult EditFeature(int id)
         {
             ViewBag.Message = "## Edit Feature ##";
@@ -44,13 +27,7 @@ namespace Portfolio_Source.Controllers
         public IActionResult EditFeature(Feature feature)
         {
             featureManager.TUpdate(feature);
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult DeleteFeature(int id)
-        {
-            featureManager.TDelete(featureManager.TGetById(id));
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Default");
         }
     }
 }
