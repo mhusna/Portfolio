@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model Service
+@{
+    ViewData["Title"] = "EditService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Service Informations</h3>
+                </div>
+
+                <form asp-controller="Service" asp-action="EditService" method="post">
+
+                    <div class="mb-3 col-9 center">
+                        <label class="form-label" asp-for="Title">Title</label>
+                        <input class="form-control" asp-for="Title" value="@Model.Title">
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <br />
+
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="ImageUrl" class="form-label">Image Url</label>
+                        <input class="form-control" asp-for="ImageUrl" value="@Model.ImageUrl">
+                        <span class="text-danger" asp-validation-for="ImageUrl"></span>
+                    </div>
+                    <br />
+
+                    <div class="col-3 center"><button class="btn btn-primary">Edit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
