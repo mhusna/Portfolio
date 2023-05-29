@@ -1,0 +1,72 @@
+﻿@using EntityLayer.Concrete
+@model About 
+@{
+    ViewData["Title"] = "EditAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+
+                <div class="card-header border-0">
+                    <h3 class="mb-0">About Informations</h3>
+                </div>
+
+                <form asp-controller="About" asp-action="EditAbout" method="post">
+
+                    <div class="mb-3 col-9 center">
+                        <label class="form-label" asp-for="Title">Title</label>
+                        <input class="form-control" asp-for="Title" value="@Model.Title">
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <br />
+
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="Description" class="form-label">Description</label>
+                        <input class="form-control" asp-for="Description" value="@Model.Description">
+                        <span class="text-danger" asp-validation-for="Description"></span>
+                    </div>
+                    <br />
+
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="Age" class="form-label">Age</label>
+                        <input class="form-control" asp-for="Age" value="@Model.Age">
+                        <span class="text-danger" asp-validation-for="Age"></span>
+                    </div>
+                    <br />
+                    
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="Mail" class="form-label">Mail</label>
+                        <input class="form-control" asp-for="Mail" value="@Model.Mail">
+                        <span class="text-danger" asp-validation-for="Mail"></span>
+                    </div>
+                    <br />
+
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="Phone" class="form-label">Phone</label>
+                        <input class="form-control" asp-for="Phone" value="@Model.Phone">
+                        <span class="text-danger" asp-validation-for="Phone"></span>
+                    </div>
+                    <br />
+                    
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="Address" class="form-label">Address</label>
+                        <input class="form-control" asp-for="Address" value="@Model.Address">
+                        <span class="text-danger" asp-validation-for="Address"></span>
+                    </div>
+                    <br />
+
+                    <div class="mb-3 col-9 center">
+                        <label asp-for="ImageUrl" class="form-label">ImageUrl</label>
+                        <input class="form-control" asp-for="ImageUrl" value="@Model.ImageUrl">
+                        <span class="text-danger" asp-validation-for="ImageUrl"></span>
+                    </div>
+
+                    <div class="col-3 center"><button class="btn btn-primary">Edit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
