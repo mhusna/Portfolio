@@ -9,7 +9,8 @@ namespace Portfolio_Source.Controllers
         AboutManager aboutManager = new AboutManager(new EfAboutRepository());
         public IActionResult Index()
         {
-            return View();
+            return View(aboutManager.TGetList());
         }
+
     }
 }
