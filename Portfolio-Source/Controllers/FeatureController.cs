@@ -26,5 +26,10 @@ namespace Portfolio_Source.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult DeleteFeature(int id)
+        {
+            featureManager.TDelete(featureManager.TGetById(id));
+            return RedirectToAction("Index");
+        }
     }
 }
