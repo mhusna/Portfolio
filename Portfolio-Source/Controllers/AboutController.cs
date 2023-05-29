@@ -10,12 +10,20 @@ namespace Portfolio_Source.Controllers
         AboutManager aboutManager = new AboutManager(new EfAboutRepository());
         public IActionResult Index()
         {
+            ViewBag.Message = "## About List ##";
+            ViewBag.Controller = "About";
+            ViewBag.Action = "Index";
+
             return View(aboutManager.TGetList());
         }
 
         [HttpGet]
         public IActionResult EditAbout(int id)
         {
+            ViewBag.Message = "## Edit About ##";
+            ViewBag.Controller = "About";
+            ViewBag.Action = "EditAbout";
+
             return View(aboutManager.TGetById(id));
         }
 

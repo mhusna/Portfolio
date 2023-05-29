@@ -10,12 +10,20 @@ namespace Portfolio_Source.Controllers
         ServiceManager serviceManager = new ServiceManager(new EfServiceRepository());
         public IActionResult Index()
         {
+            ViewBag.Message = "## Service List ##";
+            ViewBag.Controller = "Service";
+            ViewBag.Action = "Index";
+
             return View(serviceManager.TGetList());
         }
 
         [HttpGet]
         public IActionResult AddService()
         {
+            ViewBag.Message = "## Insert New Service ##";
+            ViewBag.Controller = "Service";
+            ViewBag.Action = "AddService";
+
             return View();
         }
 
@@ -29,6 +37,10 @@ namespace Portfolio_Source.Controllers
         [HttpGet]
         public IActionResult EditService(int id)
         {
+            ViewBag.Message = "## Edit Service ##";
+            ViewBag.Controller = "Service";
+            ViewBag.Action = "EditService";
+
             return View(serviceManager.TGetById(id));
         }
 

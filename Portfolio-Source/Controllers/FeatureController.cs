@@ -10,6 +10,10 @@ namespace Portfolio_Source.Controllers
         FeatureManager featureManager = new FeatureManager(new EfFeatureRepository());
         public IActionResult Index()
         {
+            ViewBag.Message = "## Feature List ##";
+            ViewBag.Controller = "Feature";
+            ViewBag.Action = "Index";
+
             return View(featureManager.TGetList());
         }
 
