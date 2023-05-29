@@ -35,6 +35,7 @@ namespace Portfolio_Source.Controllers
         [HttpPost]
         public IActionResult EditService(Service service)
         {
+            serviceManager.TUpdate(service);
             return RedirectToAction("Index");
         }
 
