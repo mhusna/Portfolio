@@ -2,48 +2,43 @@
 @model Portfolio
 @{
     ViewData["Title"] = "EditPortfolio";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_CoronaAdminLayout.cshtml";
 }
 
-<div class="container-fluid mt-2">
-    <div class="row">
-        <div class="col">
-            <div class="card">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
 
-                <div class="card-header border-0">
-                    <h3 class="mb-0">Portfolio Informations</h3>
+            <form class="forms-sample" asp-controller="Portfolio" asp-action="EditPortfolio" method="post">
+
+                <div class="form-group">
+                    <label class="form-label" asp-for="Name">Name</label>
+                    <input class="form-control" asp-for="Name" value="@Model.Name">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <br />
+
+                <div class="form-group">
+                    <label asp-for="ProjectUrl" class="form-label">Project Url</label>
+                    <input class="form-control" asp-for="ProjectUrl" value="@Model.ProjectUrl">
+                    <span class="text-danger" asp-validation-for="ProjectUrl"></span>
                 </div>
 
-                <form asp-controller="Portfolio" asp-action="EditPortfolio" method="post">
+                <div class="form-group">
+                    <label asp-for="ImageFullUrl" class="form-label">Full Image Url</label>
+                    <input class="form-control" asp-for="ImageFullUrl" value="@Model.ImageFullUrl">
+                    <span class="text-danger" asp-validation-for="ImageFullUrl"></span>
+                </div>
 
-                    <div class="mb-3 col-9 center">
-                        <label class="form-label" asp-for="Name">Name</label>
-                        <input class="form-control" asp-for="Name" value="@Model.Name">
-                        <span class="text-danger" asp-validation-for="Name"></span>
-                    </div>
-                    <br />
+                <div class="form-group">
+                    <label asp-for="ImageShortUrl" class="form-label">Short Image Url</label>
+                    <input class="form-control" asp-for="ImageShortUrl" value="@Model.ImageShortUrl">
+                    <span class="text-danger" asp-validation-for="ImageShortUrl"></span>
+                </div>
 
-                    <div class="mb-3 col-9 center">
-                        <label asp-for="ProjectUrl" class="form-label">Project Url</label>
-                        <input class="form-control" asp-for="ProjectUrl" value="@Model.ProjectUrl">
-                        <span class="text-danger" asp-validation-for="ProjectUrl"></span>
-                    </div>
-
-                    <div class="mb-3 col-9 center">
-                        <label asp-for="ImageFullUrl" class="form-label">Full Image Url</label>
-                        <input class="form-control" asp-for="ImageFullUrl" value="@Model.ImageFullUrl">
-                        <span class="text-danger" asp-validation-for="ImageFullUrl"></span>
-                    </div>
-
-                    <div class="mb-3 col-9 center">
-                        <label asp-for="ImageShortUrl" class="form-label">Short Image Url</label>
-                        <input class="form-control" asp-for="ImageShortUrl" value="@Model.ImageShortUrl">
-                        <span class="text-danger" asp-validation-for="ImageShortUrl"></span>
-                    </div>
-
-                    <div class="col-3 center"><button class="btn btn-primary">Edit</button></div>
-                </form>
-            </div>
+                <button type="submit" class="btn btn-inverse-primary btn-fw">Submit</button>
+                <a href="/Portfolio/Index/" class="btn btn-inverse-danger btn-fw">Cancel</a>
+            </form>
         </div>
     </div>
 </div>
