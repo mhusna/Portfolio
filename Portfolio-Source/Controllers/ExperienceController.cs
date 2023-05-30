@@ -10,7 +10,7 @@ namespace Portfolio_Source.Controllers
         ExperienceManager experienceManager = new ExperienceManager(new EfExperienceRepository());
         public IActionResult Index()
         {
-            ViewBag.Message = "## Experience List ##";
+            ViewBag.Message = "Experience List";
             ViewBag.Controller = "Experience";
             ViewBag.Action = "Index";
             return View(experienceManager.TGetList());
@@ -19,7 +19,7 @@ namespace Portfolio_Source.Controllers
         [HttpGet]
         public IActionResult AddExperience()
         {
-            ViewBag.Message = "## Insert New Experience ##";
+            ViewBag.Message = "New Experience";
             ViewBag.Controller = "Experience";
             ViewBag.Action = "AddExperience";
 
@@ -42,7 +42,7 @@ namespace Portfolio_Source.Controllers
         [HttpGet]
         public IActionResult EditExperience(int id)
         {
-            ViewBag.Message = "## Edit Experience ##";
+            ViewBag.Message = "Edit Experience";
             ViewBag.Controller = "Experience";
             ViewBag.Action = "EditExperience";
             return View(experienceManager.TGetById(id));
