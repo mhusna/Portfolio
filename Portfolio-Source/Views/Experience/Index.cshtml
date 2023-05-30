@@ -25,7 +25,7 @@
                     </thead>
                     <tbody>
 
-                        @foreach(var item in Model)
+                        @foreach (var item in Model)
                         {
                             <tr>
                                 <td>@item.Id</td>
@@ -33,16 +33,18 @@
                                 <td>@item.Date</td>
                                 <td style="white-space:pre-line; text-anchor:start; text-align:center">@item.Description</td>
                                 <td style="border-image:auto; image-resolution:snap; filter: brightness(0) invert(1);"><img src="@item.ImageUrl"></td>
-                                <td><a href="/Experience/DeleteExperience/@item.Id" class="btn btn-danger">Delete</a></td>
-                                <td><a href="/Experience/EditExperience/@item.Id" class="btn btn-warning">Edit</a></td>
+                                <td><a href="/Experience/DeleteExperience/@item.Id" class="btn btn-inverse-danger btn-fw">Delete</a></td>
+                                <td><a href="/Experience/EditExperience/@item.Id" class="btn btn-inverse-warning btn-fw">Edit</a></td>
                             </tr>
                         }
+
                     </tbody>
                 </table>
                 <br />
 
-                <a href="/Experience/AddExperience/" class="btn btn-primary">New Experience</a>
+                <a href="/Experience/AddExperience/" class="btn btn-inverse-primary btn-fw">New Experience</a>
             </div>
+
         </div>
     </div>
 </div>
