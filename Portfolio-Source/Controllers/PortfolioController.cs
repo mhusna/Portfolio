@@ -13,7 +13,7 @@ namespace Portfolio_Source.Controllers
         PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioRepository());
         public IActionResult Index()
         {
-            ViewBag.Message = "## Portfolio List ##";
+            ViewBag.Message = "Portfolio List";
             ViewBag.Controller = "Portfolio";
             ViewBag.Action = "Index";
 
@@ -23,7 +23,7 @@ namespace Portfolio_Source.Controllers
         [HttpGet]
         public IActionResult AddPortfolio()
         {
-            ViewBag.Message = "## Insert New Portfolio ##";
+            ViewBag.Message = "New Portfolio";
             ViewBag.Controller = "Portfolio";
             ViewBag.Action = "AddPortfolio";
 
@@ -60,7 +60,7 @@ namespace Portfolio_Source.Controllers
         [HttpGet]
         public IActionResult EditPortfolio(int id)
         {
-            ViewBag.Message = "## Edit Portfolio ##";
+            ViewBag.Message = "Edit Portfolio";
             ViewBag.Controller = "Portfolio";
             ViewBag.Action = "EditPortfolio";
 
