@@ -5,34 +5,29 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="container-fluid mt-2">
-    <div class="row">
-        <div class="col">
-            <div class="card">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <form class="forms-sample" asp-controller="Service" asp-action="EditService" method="post">
 
-                <div class="card-header border-0">
-                    <h3 class="mb-0">Service Informations</h3>
+
+                <div class="form-group">
+                    <label class="form-label" asp-for="Title">Title</label>
+                    <input class="form-control" asp-for="Title" value="@Model.Title">
+                    <span class="text-danger" asp-validation-for="Title"></span>
                 </div>
+                <br />
 
-                <form asp-controller="Service" asp-action="EditService" method="post">
+                <div class="form-group">
+                    <label asp-for="ImageUrl" class="form-label">Image Url</label>
+                    <input class="form-control" asp-for="ImageUrl" value="@Model.ImageUrl">
+                    <span class="text-danger" asp-validation-for="ImageUrl"></span>
+                </div>
+                <br />
 
-                    <div class="mb-3 col-9 center">
-                        <label class="form-label" asp-for="Title">Title</label>
-                        <input class="form-control" asp-for="Title" value="@Model.Title">
-                        <span class="text-danger" asp-validation-for="Title"></span>
-                    </div>
-                    <br />
-
-                    <div class="mb-3 col-9 center">
-                        <label asp-for="ImageUrl" class="form-label">Image Url</label>
-                        <input class="form-control" asp-for="ImageUrl" value="@Model.ImageUrl">
-                        <span class="text-danger" asp-validation-for="ImageUrl"></span>
-                    </div>
-                    <br />
-
-                    <div class="col-3 center"><button class="btn btn-primary">Edit</button></div>
-                </form>
-            </div>
+                <button type="submit" class="btn btn-inverse-primary btn-fw">Submit</button>
+                <a href="/Service/Index/" class="btn btn-inverse-danger btn-fw">Cancel</a>
+            </form>
         </div>
     </div>
 </div>
