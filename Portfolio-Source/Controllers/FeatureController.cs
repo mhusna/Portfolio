@@ -10,7 +10,7 @@ namespace Portfolio_Source.Controllers
         FeatureManager featureManager = new FeatureManager(new EfFeatureRepository());
         public IActionResult Index()
         {
-            ViewBag.Message = "## Feature List ##";
+            ViewBag.Message = "Feature List";
             ViewBag.Controller = "Feature";
             ViewBag.Action = "Index";
 
@@ -20,7 +20,7 @@ namespace Portfolio_Source.Controllers
         [HttpGet]
         public IActionResult EditFeature(int id)
         {
-            ViewBag.Message = "## Edit Feature ##";
+            ViewBag.Message = "Edit Feature";
             ViewBag.Controller = "Feature";
             ViewBag.Action = "EditFeature";
 
