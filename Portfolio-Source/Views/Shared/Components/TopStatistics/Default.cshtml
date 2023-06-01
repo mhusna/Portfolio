@@ -1,0 +1,95 @@
+﻿<div class="row">
+
+    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                            <h3 class="mb-0">@DateTime.Now.Hour : @DateTime.Now.Minute : @DateTime.Now.Second</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="icon icon-box-success ">
+                            <i class="mdi mdi-clock"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <h6 class="text-muted font-weight-normal">Current Time</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                            <h3 class="mb-0">@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="icon icon-box-success ">
+                            <i class="mdi mdi-calendar"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+                <h5 class="text-muted font-weight-normal">Date</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                            <h3 class="mb-0">@ViewBag.UnreadMessages</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="icon icon-box-warning">
+                            <i class="mdi mdi-email"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <h5 class="text-muted font-weight-normal">Unread Messages</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                            <h3 class="mb-0">@ViewBag.ReadMessages</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="icon icon-box-success">
+                            <i class="mdi mdi-email-open"></i>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="text-muted font-weight-normal">Read Messages</h5>
+            </div>
+        </div>
+    </div>
+
+</div>
