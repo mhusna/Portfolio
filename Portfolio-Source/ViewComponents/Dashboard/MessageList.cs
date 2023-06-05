@@ -1,15 +1,18 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.Repository.EfRepository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Portfolio_Source.Models;
 
 namespace Portfolio_Source.ViewComponents.Dashboard
 {
     public class MessageList:ViewComponent
     {
-        MessageManager messageManager = new MessageManager(new EfMessageRepository());
+        UserMessageManager userMessageManager = new UserMessageManager(new EfUserMessageRepository());
+
         public IViewComponentResult Invoke()
         {
-            return View(messageManager.TGetList());
+            return View(userMessageManager.GetUserMessagesWithUserService());
         }
     }
 }
