@@ -1,3 +1,6 @@
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
+
 namespace Portfolio_Source
 {
     public class Program
@@ -8,6 +11,8 @@ namespace Portfolio_Source
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
+            builder.Services.AddDbContext<Context>();
 
             var app = builder.Build();
 
