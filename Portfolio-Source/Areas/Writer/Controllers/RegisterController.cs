@@ -35,16 +35,16 @@ namespace Portfolio_Source.Areas.Writer.Controllers
                     ImageUrl = model.ImageUrl
                 };
 
-                var result = await _userManager.CreateAsync(writerUser, model.Password);
+                if(model.Password == model.ConfirmPassword)
+                {
+                    var result = await _userManager.CreateAsync(writerUser, model.Password);
 
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index", "Login");
-                }
-                else
-                {
-                    foreach(var item in result.Errors) {
-                        ModelState.AddModelError("", item.Description);
+                    if (result.Succeeded)
+                        return RedirectToAction("Index", "Login");
+                    else
+                    {
+                        foreach (var item in result.Errors)
+                            ModelState.AddModelError("", item.Description);
                     }
                 }
             }
