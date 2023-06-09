@@ -1,5 +1,6 @@
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using System.Web;
 
 namespace Portfolio_Source
 {
@@ -27,6 +28,7 @@ namespace Portfolio_Source
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
