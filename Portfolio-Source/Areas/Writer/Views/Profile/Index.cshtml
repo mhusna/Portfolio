@@ -1,4 +1,4 @@
-﻿@model EntityLayer.Concrete.WriterUser
+﻿@model Portfolio_Source.Areas.Writer.Models.UserEditViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -9,19 +9,19 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Writer Informations</h4>
-            <form class="forms-sample">
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label asp-for="@Model.FirstName">First Name</label>
-                    <input type="text" disabled class="form-control" asp-for="@Model.FirstName" value="@Model.FirstName">
+                    <label asp-for="FirstName">First Name</label>
+                    <input type="text" class="form-control" asp-for="@Model.FirstName" value="@Model.FirstName">
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="@Model.LastName">Last Name</label>
-                    <input type="text" disabled class="form-control" asp-for="@Model.LastName">
+                    <label asp-for="LastName">Last Name</label>
+                    <input type="text" class="form-control" asp-for="@Model.LastName">
                 </div>
 
-                <div class="form-group">
+                @*<div class="form-group">
                     <label asp-for="@Model.UserName">User Name</label>
                     <input disabled type="text" class="form-control" asp-for="@Model.UserName">
                 </div>
@@ -29,23 +29,23 @@
                 <div class="form-group">
                     <label asp-for="@Model.Email">Mail Address</label>
                     <input type="email" disabled class="form-control" asp-for="@Model.Email">
-                </div>
+                </div>*@
 
                 <div class="form-group">
-                    <label asp-for="@Model.ImageUrl">Image</label>
-                    <input asp-for="@Model.ImageUrl" type="file" name="img[]" class="file-upload-default">
-                    <div class="input-group col-xs-12">
+                    <label asp-for="Picture">Image</label>
+                    <input asp-for="Picture" type="file">
+                    @*<div class="input-group col-xs-12">
                         <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
                         <span class="input-group-append">
                             <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                         </span>
-                    </div>
+                    </div>*@
                 </div>
 
-                <div class="form-group">
+                @*<div class="form-group">
                     <label asp-for="@Model.PasswordHash">Password</label>
                     <input type="password" class="form-control" asp-for="@Model.PasswordHash">
-                </div>
+                </div>*@
 
                 @*<div class="form-group">
                     <label asp-for="">Password Confirm</label>
