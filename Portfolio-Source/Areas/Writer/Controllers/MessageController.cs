@@ -1,13 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.Repository.EfRepository;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio_Source.Areas.Writer.Controllers
 {
     [Area("Writer")]
     public class MessageController : Controller
     {
-        public IActionResult Index()
+        WriterMessageManager _manager = new WriterMessageManager(new EfWriterMessageRepository());
+        private readonly UserManager<WriterUser> _userManager;
+
+        public MessageController(UserManager<WriterUser> userManager)
         {
-            return View();
+            _userManager = userManager;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var messageList = _manager.WriterMessageGetByFilter(user.Email);
+            return View(messageList);
         }
     }
 }
