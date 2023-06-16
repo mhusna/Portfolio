@@ -17,7 +17,14 @@ namespace Portfolio_Source.Areas.Writer.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> InboxMessages()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var messageList = _manager.InBoxMessages(user.Email);
+            return View(messageList);
+        }
+
+        public async Task<IActionResult> OutboxMessages()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             var messageList = _manager.OutBoxMessages(user.Email);

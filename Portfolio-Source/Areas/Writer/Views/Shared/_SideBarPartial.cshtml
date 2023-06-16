@@ -9,11 +9,21 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/Writer/Message/">
+            <a class="nav-link" data-toggle="collapse" href="#messages" aria-expanded="false" aria-controls="messages">
                 <i class="menu-icon mdi mdi-email"></i>
                 <span class="menu-title">Messages</span>
+                <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="messages">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/Writer/Message/InboxMessages/"> Inbox </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/Writer/Message/OutboxMessages/"> Outbox </a></li>
+                </ul>
+            </div>
         </li>
+
+
+
 
         <li class="nav-item">
             <a class="nav-link" href="/Writer/Default/">
