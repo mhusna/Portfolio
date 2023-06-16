@@ -41,5 +41,10 @@ namespace BusinessLayer.Concrete
         {
             _writerMessageDal.Update(entity);
         }
+
+        public List<WriterMessage> WriterMessageGetByFilter(string mail)
+        {
+            return _writerMessageDal.GetByFilter(x=>x.Receiver == mail);
+        }
     }
 }
