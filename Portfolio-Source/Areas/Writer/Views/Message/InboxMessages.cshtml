@@ -29,11 +29,10 @@
                             <tr>
                                 <th>@item.Id</th>
                                 <th>@item.Date.ToShortDateString()</th>
-                                <td>@item.Sender</td>
+                                <td>@item.SenderName</td>
                                 <td>@item.Subject</td>
                                 <td>@item.MessageContent</td>
                                 <td><a href="/Writer/Message/MessageDetails/@item.Id" class="btn btn-outline-primary">Details</a></td>
-                                @*<td><label class="badge badge-danger">Pending</label></td>*@
                             </tr>
                         }
                     </tbody>

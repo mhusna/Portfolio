@@ -11,5 +11,6 @@ namespace BusinessLayer.Abstract
     {
         List<WriterMessage> OutBoxMessages(string mail);
         List<WriterMessage> InBoxMessages(string mail);
+        List<WriterMessage> GetAllMessages(string receiverMail, string senderMail);
     }
 }

@@ -51,5 +51,10 @@ namespace BusinessLayer.Concrete
         {
             return _writerMessageDal.GetByFilter(x => x.Receiver == mail);
         }
+
+        public List<WriterMessage> GetAllMessages(string receiverMail, string senderMail)
+        {
+            return _writerMessageDal.GetByFilter(x => x.Receiver == receiverMail).Where(x=>x.Sender == senderMail).ToList();
+        }
     }
 }
