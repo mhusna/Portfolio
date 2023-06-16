@@ -20,7 +20,7 @@ namespace Portfolio_Source.Areas.Writer.Controllers
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var messageList = _manager.WriterMessageGetByFilter(user.Email);
+            var messageList = _manager.OutBoxMessages(user.Email);
             return View(messageList);
         }
     }
